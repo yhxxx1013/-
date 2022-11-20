@@ -1,0 +1,16 @@
+int value = 0;
+void setup(){
+  size(800, 600); 
+  background(90,169,216);   
+}
+void draw() {
+  if(mousePressed){
+   float i=random(50,200);
+   fill(90,169,216,5);
+   rect(0,0,width,height);
+  fill(90,169,216,0);
+  stroke(255);
+  strokeWeight(10);
+  ellipse(mouseX,mouseY,i,i);
+  }
+}
