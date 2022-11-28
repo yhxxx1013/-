@@ -1,0 +1,50 @@
+void setup()
+{
+  size(500,670);
+}
+void draw()
+{
+  background(255,255,255);
+
+  float a = 0.618;
+  float a2 = a*a;
+  float a3 = a2*a;
+  float a4 = a3 * a;
+
+  color O = color(255,136,8);
+  color G = color(0,255,40);
+  color P = color(135,0,255);
+
+  int Len = 500;
+  int High = 670;
+
+  noStroke();
+  fill(O);
+  rect(0,0,Len*a4,High*a4);
+  rect(0,High-High*a4*2,Len*a4,Len*a4);
+  rect(Len,High*a3,-Len*a3,High*a3);
+
+  fill(G);
+  rect(Len*a4,High*a4,Len-Len*a3-Len*a4,High*a3-High*a4);
+  rect(0,High*a3+5,Len*a4,Len-Len*a3-Len*a4);
+
+  fill(P);
+  rect(Len-Len*a3,0,-(Len-Len*a3-Len*a4)/2,High*a4*0.5);
+  rect(Len,High,-(Len-Len*a3-Len*a4)/2-Len*a3,-High*a4*2);
+
+  stroke(0);
+  strokeWeight(8);
+  line(Len*a4,0.0,Len*a4,High-High*a4*2+Len*a4);
+  line(Len-Len*a3-(Len-Len*a3-Len*a4)/2,0,Len-Len*a3-(Len-Len*a3-Len*a4)/2,High*a4);
+  line(Len-Len*a3,0,Len-Len*a3,High-High*a4*2);
+  line(Len-(Len-Len*a3-Len*a4)/2-Len*a3,High,Len-(Len-Len*a3-Len*a4)/2-Len*a3,High-High*a4*2);
+
+
+  line(0,High*a3,Len,High*a3);
+  line(Len-Len*a3,High*a4*0.5,Len-Len*a3-(Len-Len*a3-Len*a4)/2,High*a4*0.5);
+  line(0,High*a4,Len-Len*a3,High*a4);
+  line(0,High-High*a4*2,Len,High-High*a4*2);
+  line(0,High-High*a4*2+Len*a4,Len-(Len-Len*a3-Len*a4)/2-Len*a3,High-High*a4*2+Len*a4);
+  line(Len,High*a3*2,Len-Len*a3,High*a3*2);
+
+}
