@@ -1,0 +1,29 @@
+PImage img;
+int direction=1;
+void setup() {
+  size(640, 420);
+  img=loadImage("yhx.jpg") ;
+  image(img, 0, 0, width, height);
+  frameRate(5);
+}
+void draw() {
+  for (int i=0; i<width; i+=5) {
+    for (int j=0; j<height; j+=5) {
+      color c=get(i,j);
+      noStroke();
+      fill(c);
+      switch(direction){
+      case 1:circle(i-random(5),j-random(5),5);break;
+      case 2:circle(i+random(5),j-random(5),5);break;
+      case 3:circle(i+random(5),j+random(5),5);break;
+      case 4:circle(i-random(5),j+random(5),5);break;
+      }
+    }
+  }
+  //saveFrame("line-######.tif");
+}
+void keyPressed(){
+  if(key=='r');
+  image(img, 0, 0, width, height);
+   
+}
