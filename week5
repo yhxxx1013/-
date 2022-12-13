@@ -1,0 +1,23 @@
+PVector s,v1,v2,v3;
+void setup(){
+  size(400,400);
+  background(0);
+  s= new PVector(width/2,height/2);
+  v1= PVector.random2D();
+  v1.mult(180);
+}
+void draw(){
+  v1.rotate(0.1);
+  fill(255);
+  stroke(255);
+  DrawVectorAt(s,v1);
+}
+void DrawVectorAt(PVector start,PVector v){
+  PVector dest=PVector.add(start,v);
+  line(start.x,start.y,dest.x,dest.y);
+  ellipse(dest.x,dest.y,10,10);
+}
+void keyPressed(){
+  if(key=='r');
+  background(0);
+}
